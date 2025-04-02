@@ -14,14 +14,14 @@ const app = new express()
 module.exports = app 
 
 //DATABASE CONNECTION
-// mongoose
-//   .connect(process.env.MONGO_URI)
-//   .then((res) => {
-//     console.log("Database Connected");
-//   })
-//   .catch((err) => {
-//     console.log(err);
-//   });
+mongoose
+  .connect(process.env.MONGO_URI)
+  .then((res) => {
+    console.log("Database Connected");
+  })
+  .catch((err) => {
+    console.log(err);
+  });
 
 
 //MiddleWare
