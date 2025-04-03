@@ -4,7 +4,7 @@ const AdminController = require('../controllers/AdminController')
 const CustomerSupportController = require('../controllers/CustomerSupportController')
 const JobController = require("../controllers/JobController");
 const PaymentController = require("../controllers/PaymentController");
-
+const RideController = require("../controllers/RideController");
 
 const router = express.Router()
 
@@ -31,7 +31,12 @@ router.get("/:paymentId/verify", PaymentController.verifyPayment); // Route to v
 router.get("/history/:userId", PaymentController.getPaymentHistory); // Route to get payment history
 
 
-
+//Rider
+router.post("/book", RideController.bookRide);// Route to book a ride
+router.patch("/:rideId/accept", RideController.acceptRide);// Route to accept a ride
+router.patch("/:rideId/status", RideController.updateRideStatus);// Route to update the status of a ride
+router.delete("/:rideId", RideController.cancelRide);// Route to cancel a ride
+router.get("/history/:userId", RideController.getRideHistory);// Route to get ride history
 
 
 
