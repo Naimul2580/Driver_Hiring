@@ -12,7 +12,9 @@ router.patch("/users/:id/suspend", AdminController.suspendUser) // Route to susp
 router.patch("/drivers/:id/approve", AdminController.approveDriver) // Route to approve a driver
 
 //CustomerSupport
-
+router.post("/tickets", CustomerSupportController.createTicket); // Route to create a support ticket
+router.get("/tickets", CustomerSupportController.getTickets); // Route to get all support tickets
+router.patch("/tickets/:id/status", CustomerSupportController.updateTicketStatus); // Route to update the status of a support ticket
 
 
 
