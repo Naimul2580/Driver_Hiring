@@ -40,6 +40,6 @@ A simple web-based application for hiring drivers, built with JavaScript (Node.j
 
 ### Installation
 
-1. Clone the repository:
+1. Clone the repository:-
    ```bash
    git clone https://github.com/your-username/driver-hiring-app.git
