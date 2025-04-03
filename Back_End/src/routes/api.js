@@ -1,12 +1,13 @@
-const express = require("express")
+const express = require("express");
 
-const AdminController = require('../controllers/AdminController')
-const CustomerSupportController = require('../controllers/CustomerSupportController')
+const AdminController = require('../controllers/AdminController');
+const CustomerSupportController = require('../controllers/CustomerSupportController');
 const JobController = require("../controllers/JobController");
 const PaymentController = require("../controllers/PaymentController");
 const RideController = require("../controllers/RideController");
+const UserController = require("../controllers/UserController");
 
-const router = express.Router()
+const router = express.Router();
 
 //Admin
 router.get('/Users',AdminController.getAllUsers); // Route to get all users
@@ -39,7 +40,11 @@ router.delete("/:rideId", RideController.cancelRide);// Route to cancel a ride
 router.get("/history/:userId", RideController.getRideHistory);// Route to get ride history
 
 
-
+//User
+router.get("/:id", UserController.getProfile);// Route to get user profile by ID
+router.put("/:id", UserController.updateProfile);// Route to update user profile
+router.delete("/:id", UserController.deleteAccount);// Route to delete user account
+router.get("/", UserController.getAllUsers);// Route to get all users (Admin only)
 
 
 module.exports = router
