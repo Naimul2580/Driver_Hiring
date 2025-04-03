@@ -6,6 +6,7 @@ const JobController = require("../controllers/JobController");
 const PaymentController = require("../controllers/PaymentController");
 const RideController = require("../controllers/RideController");
 const UserController = require("../controllers/UserController");
+const VehicleController = require("../controllers/VehicleController");
 
 const router = express.Router();
 
@@ -46,5 +47,11 @@ router.put("/:id", UserController.updateProfile);// Route to update user profile
 router.delete("/:id", UserController.deleteAccount);// Route to delete user account
 router.get("/", UserController.getAllUsers);// Route to get all users (Admin only)
 
+
+//Vehicle
+router.post("/add", VehicleController.addVehicle);// Route to add a vehicle
+router.put("/:vehicleId", VehicleController.updateVehicle);// Route to update vehicle details
+router.get("/:vehicleId", VehicleController.getVehicle);// Route to get vehicle details
+router.delete("/:vehicleId", VehicleController.deleteVehicle);// Route to delete a vehicle
 
 module.exports = router
