@@ -7,6 +7,7 @@ const PaymentController = require("../controllers/PaymentController");
 const RideController = require("../controllers/RideController");
 const UserController = require("../controllers/UserController");
 const VehicleController = require("../controllers/VehicleController");
+const VerificationController = require("../controllers/VerificationController");
 
 const router = express.Router();
 
@@ -53,5 +54,14 @@ router.post("/add", VehicleController.addVehicle);// Route to add a vehicle
 router.put("/:vehicleId", VehicleController.updateVehicle);// Route to update vehicle details
 router.get("/:vehicleId", VehicleController.getVehicle);// Route to get vehicle details
 router.delete("/:vehicleId", VehicleController.deleteVehicle);// Route to delete a vehicle
+
+
+//Verification
+
+router.post("/submit", VerificationController.submitDocument);// Route to submit a document for verification
+router.patch("/:documentId/approve", VerificationController.approveDocument);// Route to approve a submitted document
+router.get("/pending", VerificationController.getPendingVerifications);// Route to get all pending verifications
+
+
 
 module.exports = router
