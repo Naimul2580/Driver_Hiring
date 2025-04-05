@@ -1,3 +1,10 @@
+const {
+    getUserProfileService,
+    updateUserProfileService,
+    deleteUserAccountService,
+    getAllUsersService
+  } = require('../services/UserService');
+  
 exports.getProfile=async(req, res)=>{
 
 }

@@ -1,3 +1,10 @@
+const {
+    addVehicleService,
+    updateVehicleService,
+    getVehicleService,
+    deleteVehicleService
+  } = require('../services/VehicleService');
+  
 exports.addVehicle = async (req, res) => {
 
 };
