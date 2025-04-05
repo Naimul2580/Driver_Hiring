@@ -1,4 +1,4 @@
-
+const CustomerSupportModel = require('../models/CustomerSupportModel');
 
 const createTicketService = async () => {
 
