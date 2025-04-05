@@ -1,3 +1,7 @@
+const{getAllUsersService,getAllDriversService,suspendUserService,approveDriverService}=require('../services/AdminService')
+
+
+
 exports.getAllUsers=async(req, res)=>{
 
 }
