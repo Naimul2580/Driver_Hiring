@@ -9,6 +9,8 @@ const mongoSanitize = require("express-mongo-sanitize");
 const xss = require("xss-clean");
 const hpp = require("hpp");
 const rateLimit = require("express-rate-limit");
+const { route } = require("./src/routes/api");
+const router = require("./src/routes/api");
 
 const app = new express()
 module.exports = app 
@@ -37,3 +39,4 @@ const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 3000 });
 app.use(limiter);
 app.set("etag", false);
 
+app.use("/api/v1", router);
