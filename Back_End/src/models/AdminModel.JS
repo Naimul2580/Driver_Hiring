@@ -7,7 +7,7 @@
 // moderator
 // Has limited administrative permissions.
 // Can handle customer support, verify documents, and manage rides.
-// Cannot create or delete superadmins or moderators.
+// Cannot create or delete superdmins or moderators.
 
 const mongoose = require("mongoose");
 

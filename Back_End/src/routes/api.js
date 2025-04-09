@@ -44,8 +44,8 @@ router.get("/history/:userId", RideController.getRideHistory);// Route to get ri
 
 //User
 router.get("/:id", UserController.getProfile);// Route to get user profile by ID
-router.put("/:id", UserController.updateProfile);// Route to update user profile
-router.delete("/:id", UserController.deleteAccount);// Route to delete user account
+router.put("/:id", UserController.updateUserProfile);// Route to update user profile
+router.delete("/:id", UserController.deleteUserAccount);// Route to delete user account
 router.get("/", UserController.getAllUsers);// Route to get all users (Admin only)
 
 
