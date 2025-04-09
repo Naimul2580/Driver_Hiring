@@ -8,6 +8,7 @@ const RideController = require("../controllers/RideController");
 const UserController = require("../controllers/UserController");
 const VehicleController = require("../controllers/VehicleController");
 const VerificationController = require("../controllers/VerificationController");
+const AuthController = require("../controllers/AuthController");
 
 const router = express.Router();
 
@@ -62,6 +63,11 @@ router.post("/submit", VerificationController.submitDocument);// Route to submit
 router.patch("/:documentId/approve", VerificationController.approveDocument);// Route to approve a submitted document
 router.get("/pending", VerificationController.getPendingVerifications);// Route to get all pending verifications
 
+//Route for user registration
+router.post("/register", AuthController.registerUser);
+
+// Route for user login
+router.post("/login", AuthController.loginUser);
 
 
 module.exports = router
