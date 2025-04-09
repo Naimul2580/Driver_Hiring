@@ -24,10 +24,10 @@ router.get("/getTickets", CustomerSupportController.getTickets); // Route to get
 router.patch("/tickets/:id/status", CustomerSupportController.updateTicketStatus); // Route to update the status of a support ticket
 
 //Job
-router.post("/create", JobController.createJob); // Route to create a job
-router.get("/getJobs", JobController.getJobs); // Route to get all jobs
-router.post("/:jobId/apply", JobController.applyForJob); // Route to apply for a job
-router.delete("/:id", JobController.deleteJob); // Route to delete a job
+router.post("/job/create", JobController.createJob); // Route to create a job
+router.get("/job/getJobs", JobController.getJobs); // Route to get all jobs
+router.post("/job/:jobId/apply", JobController.applyForJob); // Route to apply for a job
+router.delete("/job/:id", JobController.deleteJob); // Route to delete a job
 
 //Payment
 router.post("/initiate", PaymentController.initiatePayment); // Route to initiate payment
@@ -39,22 +39,22 @@ router.get("/history/:userId", PaymentController.getPaymentHistory); // Route to
 router.post("/book", RideController.bookRide);// Route to book a ride
 router.patch("/:rideId/accept", RideController.acceptRide);// Route to accept a ride
 router.patch("/:rideId/status", RideController.updateRideStatus);// Route to update the status of a ride
-router.delete("/:rideId", RideController.cancelRide);// Route to cancel a ride
+router.delete("/rider/:rideId", RideController.cancelRide);// Route to cancel a ride
 router.get("/history/:userId", RideController.getRideHistory);// Route to get ride history
 
 
 //User
-router.get("/:id", UserController.getUserProfile);// Route to get user profile by ID
-router.put("/:id", UserController.updateUserProfile);// Route to update user profile
-router.delete("/:id", UserController.deleteUserAccount);// Route to delete user account
-router.get("/allUser", UserController.getAllUsers);// Route to get all users (Admin only)
+router.get("/user/:id", UserController.getUserProfile);// Route to get user profile by ID
+router.put("/user/:id", UserController.updateUserProfile);// Route to update user profile
+router.delete("/user/:id", UserController.deleteUserAccount);// Route to delete user account
+router.get("/user/allUser", UserController.getAllUsers);// Route to get all users (Admin only)
 
 
 //Vehicle
-router.post("/add", VehicleController.addVehicle);// Route to add a vehicle
-router.put("/:vehicleId", VehicleController.updateVehicle);// Route to update vehicle details
-router.get("/:vehicleId", VehicleController.getVehicle);// Route to get vehicle details
-router.delete("/:vehicleId", VehicleController.deleteVehicle);// Route to delete a vehicle
+router.post("/vehicle/add", VehicleController.addVehicle);// Route to add a vehicle
+router.put("/vehicle/:vehicleId", VehicleController.updateVehicle);// Route to update vehicle details
+router.get("/vehicle/:vehicleId", VehicleController.getVehicle);// Route to get vehicle details
+router.delete("/vehicle/:vehicleId", VehicleController.deleteVehicle);// Route to delete a vehicle
 
 
 //Verification
