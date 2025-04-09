@@ -29,8 +29,13 @@ const updateVehicleService = async (vehicleId, updateData) => {
 };
 
 // Service to get vehicle details by ID
+const mongoose = require("mongoose");
+
 const getVehicleService = async (vehicleId) => {
   try {
+    if (!mongoose.Types.ObjectId.isValid(vehicleId)) {
+      throw new Error("Invalid vehicle ID");
+    }
     const vehicle = await VehicleModel.findById(vehicleId);
     if (!vehicle) {
       throw new Error("Vehicle not found");
